@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WirelessConfig",
+  "type": "object",
+  "properties": {
+    "wireless": {
+      "type": "object",
+      "properties": {
+        "radio": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "power":         { "type": "integer", "minimum": 0, "maximum": 100 },
+              "channel2g":     { "type": "integer", "minimum": 0 },
+              "channel5g":     { "type": "integer", "minimum": 0 },
+              "bandwidth2g":   { "type": "integer", "minimum": 0 },
+              "bandwidth5g":   { "type": "integer", "minimum": 0 },
+              "dfs":           { "type": "boolean" },
+              "atf":           { "type": "boolean" },
+              "bandsteering":  { "type": "boolean" },
+              "zerowait":      { "type": "boolean" }
+            },
+            "required": [
+              "power", "channel2g", "channel5g", "bandwidth2g", "bandwidth5g",
+              "dfs", "atf", "bandsteering", "zerowait"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 4
+        },
+        "ssid": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ssid":             { "type": "string", "maxLength": 64 },
+              "hide":             { "type": "boolean" },
+              "security":         { "type": "integer", "minimum": 0 },
+              "password":         { "type": "string", "maxLength": 64 },
+              "password_onscreen":{ "type": "boolean" },
+              "enable2g":         { "type": "boolean" },
+              "enable5g":         { "type": "boolean" },
+              "isolation":        { "type": "boolean" },
+              "hopping":          { "type": "boolean" }
+            },
+            "required": [
+              "ssid", "hide", "security", "password", "password_onscreen",
+              "enable2g", "enable5g", "isolation", "hopping"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 4
+        }
+      },
+      "required": ["radio", "ssid"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["wireless"],
+  "additionalProperties": false
+
+}

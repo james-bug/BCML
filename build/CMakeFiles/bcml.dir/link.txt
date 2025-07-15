@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbcml.a CMakeFiles/bcml.dir/src/lib/bcml_log.c.o CMakeFiles/bcml.dir/src/lib/core/bcml_config.c.o CMakeFiles/bcml.dir/src/lib/validator/validator_wireless.c.o CMakeFiles/bcml.dir/src/lib/dataconvert/export_wireless_json.c.o CMakeFiles/bcml.dir/src/lib/dataconvert/parse_wireless_json.c.o CMakeFiles/bcml.dir/src/lib/sb/sb_ops.c.o CMakeFiles/bcml.dir/src/lib/sb/restapi/sb_ops_restapi.c.o CMakeFiles/bcml.dir/src/lib/sb/restapi/rest_client.c.o
+/usr/bin/ranlib libbcml.a
